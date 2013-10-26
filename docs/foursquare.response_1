@@ -1,0 +1,1505 @@
+{
+   "response" : {
+      "neighborhoods" : [],
+      "venues" : [
+         {
+            "hereNow" : {
+               "count" : 2,
+               "groups" : [
+                  {
+                     "count" : 2,
+                     "name" : "Other people here",
+                     "type" : "others",
+                     "items" : []
+                  }
+               ]
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 294,
+               "lat" : 52.4975702990329,
+               "state" : "Berlin",
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Alt-Stralau 70",
+               "lng" : 13.4651566456314,
+               "postalCode" : "10245"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 1368,
+               "tipCount" : 37,
+               "checkinsCount" : 1983
+            },
+            "name" : "Salon zur wilden Renate",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/nightlife/nightclub_"
+                  },
+                  "primary" : true,
+                  "name" : "Nightclub",
+                  "id" : "4bf58dd8d48988d11f941735",
+                  "shortName" : "Nightclub",
+                  "pluralName" : "Nightclubs"
+               }
+            ],
+            "contact" : {
+               "phone" : "+493025041426",
+               "formattedPhone" : "+49 30 25041426"
+            },
+            "restricted" : true,
+            "url" : "http://www.renate.cc",
+            "id" : "4b4f7f91f964a520ff0827e3",
+            "verified" : true
+         },
+         {
+            "hereNow" : {
+               "count" : 0,
+               "groups" : []
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 820,
+               "lat" : 52.5023251860176,
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Markgrafendamm 24 c",
+               "lng" : 13.4661912918091,
+               "postalCode" : "10245"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 765,
+               "tipCount" : 8,
+               "checkinsCount" : 1457
+            },
+            "name" : "://about blank",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/nightlife/nightclub_"
+                  },
+                  "primary" : true,
+                  "name" : "Nightclub",
+                  "id" : "4bf58dd8d48988d11f941735",
+                  "shortName" : "Nightclub",
+                  "pluralName" : "Nightclubs"
+               }
+            ],
+            "contact" : {},
+            "restricted" : true,
+            "url" : "http://aboutparty.net",
+            "id" : "4be615e32457a593e37cac15",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 0,
+               "groups" : []
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1427,
+               "lat" : 52.5046239713066,
+               "state" : "Berlin",
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Warschauer Platz 18",
+               "lng" : 13.4492269168674,
+               "postalCode" : "10245"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 1096,
+               "tipCount" : 23,
+               "checkinsCount" : 1376
+            },
+            "name" : "Matrix",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/nightlife/nightclub_"
+                  },
+                  "primary" : true,
+                  "name" : "Nightclub",
+                  "id" : "4bf58dd8d48988d11f941735",
+                  "shortName" : "Nightclub",
+                  "pluralName" : "Nightclubs"
+               }
+            ],
+            "contact" : {},
+            "restricted" : true,
+            "id" : "4adcda7af964a520f64621e3",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 0,
+               "groups" : []
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1399,
+               "lat" : 52.5010700811127,
+               "state" : "Berlin",
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Falckensteinstr. 49",
+               "lng" : 13.4452093407684,
+               "postalCode" : "10997"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 2031,
+               "tipCount" : 44,
+               "checkinsCount" : 2838
+            },
+            "name" : "Watergate Club",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/nightlife/nightclub_"
+                  },
+                  "primary" : true,
+                  "name" : "Nightclub",
+                  "id" : "4bf58dd8d48988d11f941735",
+                  "shortName" : "Nightclub",
+                  "pluralName" : "Nightclubs"
+               }
+            ],
+            "contact" : {
+               "phone" : "+493061280394",
+               "formattedPhone" : "+49 30 61280394"
+            },
+            "restricted" : true,
+            "events" : {
+               "count" : 1,
+               "summary" : "Watergate Nacht",
+               "items" : [
+                  {
+                     "provider" : {
+                        "urlText" : "more info",
+                        "iconUrl" : {
+                           "name" : "/logo.png",
+                           "sizes" : [
+                              20,
+                              40
+                           ],
+                           "prefix" : "https://playfoursquare.s3.amazonaws.com/events/images/partners/sk/"
+                        },
+                        "name" : "songkick"
+                     },
+                     "timeZone" : "Europe/Berlin",
+                     "images" : [],
+                     "date" : 1382756400,
+                     "stats" : {
+                        "usersCount" : 5,
+                        "checkinsCount" : 5
+                     },
+                     "name" : "Watergate Nacht",
+                     "categories" : [
+                        {
+                           "icon" : {
+                              "suffix" : ".png",
+                              "prefix" : "https://ss1.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_"
+                           },
+                           "primary" : true,
+                           "name" : "Concert",
+                           "id" : "4e0a4b91bd41eda0d6092f89",
+                           "shortName" : "Concert",
+                           "pluralName" : "Concerts"
+                        }
+                     ],
+                     "participants" : [
+                        {
+                           "participant" : {
+                              "images" : [],
+                              "id" : "505fbfa27e278c6b0dbcb625",
+                              "totalEvents" : 0,
+                              "displayName" : "Watergate Nacht"
+                           },
+                           "role" : "headline"
+                        }
+                     ],
+                     "text" : "",
+                     "url" : "http://www.songkick.com/concerts/18214299-watergate-nacht-at-watergate?utm_source=4436&utm_medium=partner",
+                     "id" : "52491c638abfc78d8e733e0f",
+                     "allDay" : true
+                  }
+               ]
+            },
+            "url" : "http://www.water-gate.de",
+            "id" : "4adcda7bf964a520284721e3",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 1,
+               "groups" : [
+                  {
+                     "count" : 1,
+                     "name" : "Other people here",
+                     "type" : "others",
+                     "items" : []
+                  }
+               ]
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 904,
+               "lat" : 52.4967245344028,
+               "crossStreet" : "Schlesische Str.",
+               "state" : "Berlin",
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Am Flutgraben 1",
+               "lng" : 13.450334072113,
+               "postalCode" : "12435"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 2636,
+               "tipCount" : 56,
+               "checkinsCount" : 3934
+            },
+            "name" : "Club der Visionäre",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/nightlife/bar_"
+                  },
+                  "primary" : true,
+                  "name" : "Bar",
+                  "id" : "4bf58dd8d48988d116941735",
+                  "shortName" : "Bar",
+                  "pluralName" : "Bars"
+               }
+            ],
+            "contact" : {
+               "phone" : "+493069518942",
+               "formattedPhone" : "+49 30 69518942"
+            },
+            "restricted" : true,
+            "url" : "http://clubdervisionaere.com",
+            "id" : "4adcda79f964a520a24621e3",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 5,
+               "groups" : [
+                  {
+                     "count" : 5,
+                     "name" : "Other people here",
+                     "type" : "others",
+                     "items" : []
+                  }
+               ]
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1320,
+               "lat" : 52.4991300400429,
+               "state" : "Berlin",
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Cuvrystr. 7",
+               "lng" : 13.4450731271342,
+               "postalCode" : "10997"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 1499,
+               "tipCount" : 18,
+               "checkinsCount" : 2365
+            },
+            "name" : "Lido",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_rockclub_"
+                  },
+                  "primary" : true,
+                  "name" : "Rock Club",
+                  "id" : "4bf58dd8d48988d1e9931735",
+                  "shortName" : "Rock Club",
+                  "pluralName" : "Rock Clubs"
+               }
+            ],
+            "contact" : {},
+            "restricted" : true,
+            "id" : "4adcda78f964a520514621e3",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 5,
+               "groups" : [
+                  {
+                     "count" : 5,
+                     "name" : "Other people here",
+                     "type" : "others",
+                     "items" : []
+                  }
+               ]
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1489,
+               "lat" : 52.5046370836973,
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Warschauer Str. 39-40",
+               "lng" : 13.4479227662086,
+               "postalCode" : "10243"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 2412,
+               "tipCount" : 68,
+               "checkinsCount" : 6162
+            },
+            "name" : "Michelberger Hotel",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/travel/hotel_"
+                  },
+                  "primary" : true,
+                  "name" : "Hotel",
+                  "id" : "4bf58dd8d48988d1fa931735",
+                  "shortName" : "Hotel",
+                  "pluralName" : "Hotels"
+               }
+            ],
+            "contact" : {
+               "twitter" : "themichelberger",
+               "phone" : "+493029778590",
+               "formattedPhone" : "+49 30 29778590"
+            },
+            "restricted" : true,
+            "url" : "http://www.michelbergerhotel.com",
+            "id" : "4aeae4aef964a52074bc21e3",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 3,
+               "groups" : [
+                  {
+                     "count" : 3,
+                     "name" : "Other people here",
+                     "type" : "others",
+                     "items" : []
+                  }
+               ]
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1236,
+               "lat" : 52.505972,
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Lenbachstr. 17",
+               "lng" : 13.467511,
+               "postalCode" : "10245"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 285,
+               "tipCount" : 11,
+               "checkinsCount" : 1972
+            },
+            "name" : "Margarete F",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/nightlife/bar_"
+                  },
+                  "primary" : true,
+                  "name" : "Bar",
+                  "id" : "4bf58dd8d48988d116941735",
+                  "shortName" : "Bar",
+                  "pluralName" : "Bars"
+               }
+            ],
+            "contact" : {
+               "phone" : "+491772100355",
+               "formattedPhone" : "+49 177 2100355"
+            },
+            "restricted" : true,
+            "id" : "4afdf92ef964a520952c22e3",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 0,
+               "groups" : []
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 982,
+               "lat" : 52.497198513673,
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Vor dem Schlesischen Tor 3",
+               "lng" : 13.4493299939702,
+               "postalCode" : "10997"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 925,
+               "tipCount" : 21,
+               "checkinsCount" : 1259
+            },
+            "name" : "Chalet",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/nightlife/nightclub_"
+                  },
+                  "primary" : true,
+                  "name" : "Nightclub",
+                  "id" : "4bf58dd8d48988d11f941735",
+                  "shortName" : "Nightclub",
+                  "pluralName" : "Nightclubs"
+               }
+            ],
+            "contact" : {},
+            "restricted" : true,
+            "url" : "http://www.chalet-berlin.de",
+            "id" : "4ff75c00e4b09036684fc2c5",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 0,
+               "groups" : []
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1193,
+               "lat" : 52.505715,
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Sonntag Str. 30",
+               "lng" : 13.466393,
+               "postalCode" : "10245"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 173,
+               "tipCount" : 10,
+               "checkinsCount" : 405
+            },
+            "name" : "Chapel",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/nightlife/bar_"
+                  },
+                  "primary" : true,
+                  "name" : "Bar",
+                  "id" : "4bf58dd8d48988d116941735",
+                  "shortName" : "Bar",
+                  "pluralName" : "Bars"
+               }
+            ],
+            "contact" : {
+               "phone" : "+493065936574",
+               "formattedPhone" : "+49 30 65936574"
+            },
+            "restricted" : true,
+            "url" : "http://www.chapelberlin.com",
+            "id" : "4e7cf17d29c24682e654f419",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 3,
+               "groups" : [
+                  {
+                     "count" : 3,
+                     "name" : "Other people here",
+                     "type" : "others",
+                     "items" : []
+                  }
+               ]
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1610,
+               "lat" : 52.5007576570686,
+               "state" : "Berlin",
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "U Schlesisches Tor",
+               "lng" : 13.4415262558619,
+               "postalCode" : "10997"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 618,
+               "tipCount" : 8,
+               "checkinsCount" : 862
+            },
+            "name" : "Bi Nuu",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/nightlife/nightclub_"
+                  },
+                  "primary" : true,
+                  "name" : "Nightclub",
+                  "id" : "4bf58dd8d48988d11f941735",
+                  "shortName" : "Nightclub",
+                  "pluralName" : "Nightclubs"
+               }
+            ],
+            "contact" : {},
+            "restricted" : true,
+            "events" : {
+               "count" : 1,
+               "summary" : "Herr von Grau",
+               "items" : [
+                  {
+                     "provider" : {
+                        "urlText" : "more info",
+                        "iconUrl" : {
+                           "name" : "/logo.png",
+                           "sizes" : [
+                              20,
+                              40
+                           ],
+                           "prefix" : "https://playfoursquare.s3.amazonaws.com/events/images/partners/sk/"
+                        },
+                        "name" : "songkick"
+                     },
+                     "timeZone" : "Europe/Berlin",
+                     "images" : [],
+                     "stats" : {
+                        "usersCount" : 3,
+                        "checkinsCount" : 3
+                     },
+                     "name" : "Herr von Grau",
+                     "categories" : [
+                        {
+                           "icon" : {
+                              "suffix" : ".png",
+                              "prefix" : "https://ss1.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_"
+                           },
+                           "primary" : true,
+                           "name" : "Concert",
+                           "id" : "4e0a4b91bd41eda0d6092f89",
+                           "shortName" : "Concert",
+                           "pluralName" : "Concerts"
+                        }
+                     ],
+                     "participants" : [
+                        {
+                           "participant" : {
+                              "images" : [],
+                              "id" : "4e173f0cbd41ff11c67f4502",
+                              "totalEvents" : 0,
+                              "displayName" : "Herr von Grau"
+                           },
+                           "role" : "headline"
+                        }
+                     ],
+                     "text" : "",
+                     "url" : "http://www.songkick.com/concerts/16589649-herr-von-grau-at-bi-nuu?utm_source=4436&utm_medium=partner",
+                     "startAt" : 1382810400,
+                     "endAt" : 1382832000,
+                     "id" : "51af80cdc64033757ab7b36d",
+                     "allDay" : false
+                  }
+               ]
+            },
+            "url" : "http://bi-nuu.de",
+            "id" : "4f51263de4b0771bcd74146c",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 2,
+               "groups" : [
+                  {
+                     "count" : 2,
+                     "name" : "Other people here",
+                     "type" : "others",
+                     "items" : []
+                  }
+               ]
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1531,
+               "lat" : 52.5085422165977,
+               "state" : "Berlin",
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Simplonstraße 16",
+               "lng" : 13.4582948684692,
+               "postalCode" : "10245"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 770,
+               "tipCount" : 39,
+               "checkinsCount" : 1248
+            },
+            "name" : "Schneeweiß",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/food/german_"
+                  },
+                  "primary" : true,
+                  "name" : "German Restaurant",
+                  "id" : "4bf58dd8d48988d10d941735",
+                  "shortName" : "German",
+                  "pluralName" : "German Restaurants"
+               }
+            ],
+            "contact" : {},
+            "restricted" : true,
+            "id" : "4b0a7e83f964a520712423e3",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 0,
+               "groups" : []
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1506,
+               "lat" : 52.5086140468963,
+               "crossStreet" : "Seumestraße",
+               "state" : "Berlin",
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Wühlischstraße 43",
+               "lng" : 13.4611701965332,
+               "postalCode" : "10245"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 811,
+               "tipCount" : 27,
+               "checkinsCount" : 1640
+            },
+            "name" : "Süß War Gestern",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/nightlife/bar_"
+                  },
+                  "primary" : true,
+                  "name" : "Bar",
+                  "id" : "4bf58dd8d48988d116941735",
+                  "shortName" : "Bar",
+                  "pluralName" : "Bars"
+               }
+            ],
+            "contact" : {
+               "phone" : "+493024412940",
+               "formattedPhone" : "+49 30 24412940"
+            },
+            "restricted" : true,
+            "id" : "4afe18cef964a520e42d22e3",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 1,
+               "groups" : [
+                  {
+                     "count" : 1,
+                     "name" : "Other people here",
+                     "type" : "others",
+                     "items" : []
+                  }
+               ]
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1425,
+               "lat" : 52.500859,
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Falckensteinstr. 48",
+               "lng" : 13.444599,
+               "postalCode" : "10997"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 1248,
+               "tipCount" : 22,
+               "checkinsCount" : 2226
+            },
+            "name" : "Magnet",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/nightlife/nightclub_"
+                  },
+                  "primary" : true,
+                  "name" : "Nightclub",
+                  "id" : "4bf58dd8d48988d11f941735",
+                  "shortName" : "Nightclub",
+                  "pluralName" : "Nightclubs"
+               }
+            ],
+            "contact" : {
+               "phone" : "+493044008140",
+               "formattedPhone" : "+49 30 44008140"
+            },
+            "restricted" : true,
+            "events" : {
+               "count" : 1,
+               "summary" : "Maximum Rock",
+               "items" : [
+                  {
+                     "provider" : {
+                        "urlText" : "more info",
+                        "iconUrl" : {
+                           "name" : "/logo.png",
+                           "sizes" : [
+                              20,
+                              40
+                           ],
+                           "prefix" : "https://playfoursquare.s3.amazonaws.com/events/images/partners/sk/"
+                        },
+                        "name" : "songkick"
+                     },
+                     "timeZone" : "Europe/Berlin",
+                     "images" : [],
+                     "date" : 1382756400,
+                     "stats" : {
+                        "usersCount" : 1,
+                        "checkinsCount" : 1
+                     },
+                     "name" : "Maximum Rock",
+                     "categories" : [
+                        {
+                           "icon" : {
+                              "suffix" : ".png",
+                              "prefix" : "https://ss1.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_"
+                           },
+                           "primary" : true,
+                           "name" : "Concert",
+                           "id" : "4e0a4b91bd41eda0d6092f89",
+                           "shortName" : "Concert",
+                           "pluralName" : "Concerts"
+                        }
+                     ],
+                     "participants" : [
+                        {
+                           "participant" : {
+                              "images" : [],
+                              "id" : "4e5590b6196bd3a8a962ac77",
+                              "totalEvents" : 0,
+                              "displayName" : "Maximum Rock"
+                           },
+                           "role" : "headline"
+                        }
+                     ],
+                     "text" : "",
+                     "url" : "http://www.songkick.com/concerts/18214294-maximum-rock-at-magnet-club?utm_source=4436&utm_medium=partner",
+                     "id" : "52491c638abfc78d8e733e0d",
+                     "allDay" : true
+                  }
+               ]
+            },
+            "url" : "http://www.magnet-club.de",
+            "id" : "4adcda77f964a520284621e3",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 0,
+               "groups" : []
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1539,
+               "lat" : 52.5088660003051,
+               "state" : "Berlin",
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Wühlischstr. 22",
+               "lng" : 13.4605137714578,
+               "postalCode" : "10245"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 932,
+               "tipCount" : 41,
+               "checkinsCount" : 2358
+            },
+            "name" : "Hops & Barley",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/food/brewery_"
+                  },
+                  "primary" : true,
+                  "name" : "Brewery",
+                  "id" : "50327c8591d4c4b30a586d5d",
+                  "shortName" : "Brewery",
+                  "pluralName" : "Breweries"
+               }
+            ],
+            "contact" : {
+               "twitter" : "hopsandbarley",
+               "phone" : "+493029367534",
+               "formattedPhone" : "+49 30 29367534"
+            },
+            "restricted" : true,
+            "url" : "http://www.hopsandbarley-berlin.de",
+            "id" : "4adcda78f964a520704621e3",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 0,
+               "groups" : []
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1649,
+               "lat" : 52.5095674197402,
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Gabriel-Max-Str. 1",
+               "lng" : 13.4578013420105,
+               "postalCode" : "10245"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 1006,
+               "tipCount" : 68,
+               "checkinsCount" : 1970
+            },
+            "name" : "Café Datscha",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/food/default_"
+                  },
+                  "primary" : true,
+                  "name" : "Eastern European Restaurant",
+                  "id" : "4bf58dd8d48988d109941735",
+                  "shortName" : "Eastern European",
+                  "pluralName" : "Eastern European Restaurants"
+               }
+            ],
+            "contact" : {
+               "phone" : "+493070086735",
+               "formattedPhone" : "+49 30 70086735"
+            },
+            "restricted" : true,
+            "url" : "http://cafe-datscha.de",
+            "id" : "4b5e1666f964a520f17c29e3",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 0,
+               "groups" : []
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1483,
+               "lat" : 52.5073276137734,
+               "crossStreet" : "RAW-Gelände",
+               "state" : "Berlin",
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Revaler Str. 99",
+               "lng" : 13.4545397758484,
+               "postalCode" : "10245"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 1370,
+               "tipCount" : 24,
+               "checkinsCount" : 2100
+            },
+            "name" : "Cassiopeia",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_"
+                  },
+                  "primary" : true,
+                  "name" : "Concert Hall",
+                  "id" : "5032792091d4c4b30a586d5c",
+                  "shortName" : "Concert Hall",
+                  "pluralName" : "Concert Halls"
+               }
+            ],
+            "contact" : {
+               "phone" : "+493047385949",
+               "formattedPhone" : "+49 30 47385949"
+            },
+            "restricted" : true,
+            "events" : {
+               "count" : 1,
+               "summary" : "DJ Funkydelic, Sinner and Truebeatz Crew",
+               "items" : [
+                  {
+                     "provider" : {
+                        "urlText" : "more info",
+                        "iconUrl" : {
+                           "name" : "/logo.png",
+                           "sizes" : [
+                              20,
+                              40
+                           ],
+                           "prefix" : "https://playfoursquare.s3.amazonaws.com/events/images/partners/sk/"
+                        },
+                        "name" : "songkick"
+                     },
+                     "timeZone" : "Europe/Berlin",
+                     "images" : [],
+                     "stats" : {
+                        "usersCount" : 0,
+                        "checkinsCount" : 0
+                     },
+                     "name" : "DJ Funkydelic, Sinner and Truebeatz Crew",
+                     "categories" : [
+                        {
+                           "icon" : {
+                              "suffix" : ".png",
+                              "prefix" : "https://ss1.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_"
+                           },
+                           "primary" : true,
+                           "name" : "Concert",
+                           "id" : "4e0a4b91bd41eda0d6092f89",
+                           "shortName" : "Concert",
+                           "pluralName" : "Concerts"
+                        }
+                     ],
+                     "participants" : [
+                        {
+                           "participant" : {
+                              "images" : [],
+                              "id" : "4e173f03bd41ff11c67f21f7",
+                              "totalEvents" : 0,
+                              "displayName" : "Sinner"
+                           },
+                           "role" : "headline"
+                        },
+                        {
+                           "participant" : {
+                              "images" : [],
+                              "id" : "51bd1c662d4e4844fa407e23",
+                              "totalEvents" : 0,
+                              "displayName" : "DJ Funkydelic"
+                           },
+                           "role" : "headline"
+                        },
+                        {
+                           "participant" : {
+                              "images" : [],
+                              "id" : "51c2628479c91341dcb2a587",
+                              "totalEvents" : 0,
+                              "displayName" : "Truebeatz Crew"
+                           },
+                           "role" : "headline"
+                        }
+                     ],
+                     "text" : "",
+                     "url" : "http://www.songkick.com/concerts/17834089-dj-funkydelic-at-cassiopeia?utm_source=4436&utm_medium=partner",
+                     "startAt" : 1382821200,
+                     "endAt" : 1382842800,
+                     "id" : "521eacbbfcf61be37ab9c138",
+                     "allDay" : false
+                  }
+               ]
+            },
+            "url" : "http://www.cassiopeia-berlin.de",
+            "id" : "4adcda79f964a520854621e3",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 0,
+               "groups" : []
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1610,
+               "lat" : 52.5076541232077,
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Revaler Straße 99",
+               "lng" : 13.4514713287354,
+               "postalCode" : "10245"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 581,
+               "tipCount" : 8,
+               "checkinsCount" : 853
+            },
+            "name" : "Urban Spree",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/nightlife/beergarden_"
+                  },
+                  "primary" : true,
+                  "name" : "Beer Garden",
+                  "id" : "4bf58dd8d48988d117941735",
+                  "shortName" : "Beer Garden",
+                  "pluralName" : "Beer Gardens"
+               }
+            ],
+            "contact" : {
+               "twitter" : "urban_spree"
+            },
+            "restricted" : true,
+            "id" : "4ec79b8ee5e8f7bb87fb8452",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 0,
+               "groups" : []
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1513,
+               "lat" : 52.5053634125822,
+               "state" : "Berlin",
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Warschauer Str. 34",
+               "lng" : 13.4486975555443,
+               "postalCode" : "10243"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 743,
+               "tipCount" : 7,
+               "checkinsCount" : 1226
+            },
+            "name" : "Monster Ronson's Ichiban Karaoke",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/nightlife/karaoke_"
+                  },
+                  "primary" : true,
+                  "name" : "Karaoke Bar",
+                  "id" : "4bf58dd8d48988d120941735",
+                  "shortName" : "Karaoke",
+                  "pluralName" : "Karaoke Bars"
+               }
+            ],
+            "contact" : {
+               "phone" : "+493089751327",
+               "formattedPhone" : "+49 30 89751327"
+            },
+            "restricted" : true,
+            "url" : "http://www.karaokemonster.de",
+            "id" : "4adcda78f964a520374621e3",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 2,
+               "groups" : [
+                  {
+                     "count" : 2,
+                     "name" : "Other people here",
+                     "type" : "others",
+                     "items" : []
+                  }
+               ]
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1864,
+               "lat" : 52.4980537332017,
+               "crossStreet" : "Görlitzer Str.",
+               "state" : "Berlin",
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Lübbener Str. 1",
+               "lng" : 13.4363329410553,
+               "postalCode" : "10997"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 610,
+               "tipCount" : 24,
+               "checkinsCount" : 869
+            },
+            "name" : "Bar Raval",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/food/tapas_"
+                  },
+                  "primary" : true,
+                  "name" : "Tapas Restaurant",
+                  "id" : "4bf58dd8d48988d1db931735",
+                  "shortName" : "Tapas",
+                  "pluralName" : "Tapas Restaurants"
+               }
+            ],
+            "contact" : {
+               "phone" : "+493053167954",
+               "formattedPhone" : "+49 30 53167954"
+            },
+            "restricted" : true,
+            "url" : "http://www.barraval.de",
+            "id" : "4d5574dae7f1a1cd45b7faa4",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 0,
+               "groups" : []
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1646,
+               "lat" : 52.5091809403513,
+               "crossStreet" : "Wühlischstraße",
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Simon-Dach-Str. 32",
+               "lng" : 13.45576309966,
+               "postalCode" : "10245"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 956,
+               "tipCount" : 24,
+               "checkinsCount" : 2064
+            },
+            "name" : "Kptn. A Müller",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/nightlife/bar_"
+                  },
+                  "primary" : true,
+                  "name" : "Bar",
+                  "id" : "4bf58dd8d48988d116941735",
+                  "shortName" : "Bar",
+                  "pluralName" : "Bars"
+               }
+            ],
+            "contact" : {},
+            "restricted" : true,
+            "url" : "http://www.kptn.de",
+            "id" : "4af342a3f964a5202dec21e3",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 0,
+               "groups" : []
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1587,
+               "lat" : 52.50859,
+               "state" : "Berlin",
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Simon-Dach-Str. 28",
+               "lng" : 13.455609,
+               "postalCode" : "10245"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 529,
+               "tipCount" : 10,
+               "checkinsCount" : 961
+            },
+            "name" : "Primitiv Bar",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/nightlife/bar_"
+                  },
+                  "primary" : true,
+                  "name" : "Bar",
+                  "id" : "4bf58dd8d48988d116941735",
+                  "shortName" : "Bar",
+                  "pluralName" : "Bars"
+               }
+            ],
+            "contact" : {},
+            "restricted" : true,
+            "id" : "4afdfa1df964a5209e2c22e3",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 1,
+               "groups" : [
+                  {
+                     "count" : 1,
+                     "name" : "Other people here",
+                     "type" : "others",
+                     "items" : []
+                  }
+               ]
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1669,
+               "lat" : 52.5007436038692,
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Skalitzer Str. 75",
+               "lng" : 13.4405753408194,
+               "postalCode" : "10999"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 504,
+               "tipCount" : 8,
+               "checkinsCount" : 850
+            },
+            "name" : "Kirk Bar",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/nightlife/bar_"
+                  },
+                  "primary" : true,
+                  "name" : "Bar",
+                  "id" : "4bf58dd8d48988d116941735",
+                  "shortName" : "Bar",
+                  "pluralName" : "Bars"
+               }
+            ],
+            "contact" : {},
+            "restricted" : true,
+            "id" : "4b0c3b80f964a5205e3923e3",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 0,
+               "groups" : []
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1494,
+               "lat" : 52.5075757611646,
+               "state" : "Berlin",
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Revaler Str. 99",
+               "lng" : 13.4550976753235,
+               "postalCode" : "10245"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 292,
+               "tipCount" : 4,
+               "checkinsCount" : 444
+            },
+            "name" : "Badehaus - Szimpla Musiksalon",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_"
+                  },
+                  "primary" : true,
+                  "name" : "Music Venue",
+                  "id" : "4bf58dd8d48988d1e5931735",
+                  "shortName" : "Music Venue",
+                  "pluralName" : "Music Venues"
+               }
+            ],
+            "contact" : {},
+            "restricted" : true,
+            "url" : "http://www.badehaus-berlin.com",
+            "id" : "4e62924d18a8ce02fce9d584",
+            "verified" : false
+         },
+         {
+            "hereNow" : {
+               "count" : 0,
+               "groups" : []
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 1512,
+               "lat" : 52.507656,
+               "crossStreet" : "Simon-Dach-Str.",
+               "state" : "Berlin",
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Revaler Str. 99",
+               "lng" : 13.454698,
+               "postalCode" : "10245"
+            },
+            "referralId" : "v-1382817407",
+            "stats" : {
+               "usersCount" : 254,
+               "tipCount" : 3,
+               "checkinsCount" : 387
+            },
+            "name" : "Crack Bellmer Bar",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/nightlife/bar_"
+                  },
+                  "primary" : true,
+                  "name" : "Bar",
+                  "id" : "4bf58dd8d48988d116941735",
+                  "shortName" : "Bar",
+                  "pluralName" : "Bars"
+               }
+            ],
+            "contact" : {},
+            "restricted" : true,
+            "url" : "http://www.crackbellmer.de",
+            "id" : "4f403a25e4b0f4d09b2bf3d0",
+            "verified" : false
+         }
+      ]
+   },
+   "meta" : {
+      "code" : 200
+   }
+}

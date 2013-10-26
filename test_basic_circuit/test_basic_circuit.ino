@@ -4,21 +4,41 @@
 - a buzzer
 */
 
+#define DEBUG 1
+
 #define sensorPin A5
-#define ledPin 5
+#define ledPin A2
 #define buzzerPin 11
+
+#define fadeAmount 50
+
+int sensorValue = 0;
+int frequency = 0;
+int wait = 0;
 
 void setup(){
   pinMode(ledPin, OUTPUT);
   pinMode(buzzerPin, OUTPUT);
-  scale();
-}
-  
-  
-void loop(){
-  delay(500);
+  #ifdef DEBUG
+    Serial.begin(9600);
+  #endif
 }
 
+  
+void loop(){
+  scale();
+  sensorValue = analogRead(sensorPin);
+  frequency = map(sensorValue, 0, 1024, 1, 10);
+  wait = 100 * frequency;
+  #ifdef DEBUG
+    Serial.print(sensorValue);
+    Serial.print(" => ");
+    Serial.println(frequency);
+  #endif
+  delay(wait);
+}
+  
+  
 void beep(int frequencyInHertz, long timeInMilliseconds)
 {
   int x;

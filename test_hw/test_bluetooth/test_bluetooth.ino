@@ -7,7 +7,7 @@ SoftwareSerial bluetooth(bluetoothTx,bluetoothRx);
 
 void setup(){
   Serial.begin(9600);  // Begin the serial monitor at 9600bps
-  
+
   bluetooth.begin(115200);  // The Bluetooth Mate defaults to 115200bps
   bluetooth.print("$$$");  // Enter command mode
   delay(100);  // Short delay, wait for the Mate to send back CMD
@@ -19,11 +19,11 @@ void setup(){
 void loop(){
   if (bluetooth.available()){ //if bluetooth sent any characters
     // send ay character the bluetooth prints to the serial monitor
-    Serial.print((char)bluetooth.read());
+    int intValue = (int)bluetooth.read();
+    Serial.print("Received integer value: ");
+    Serial.println(intValue);
   }
-  if (Serial.available()){ // if stuff was typed in the serial monitor
-    bluetooth.print((char)Serial.read());
-  }
-  
-  //and loop forever
 }
+
+
+

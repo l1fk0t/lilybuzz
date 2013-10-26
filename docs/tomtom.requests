@@ -1,0 +1,7 @@
+
+curl -k 'https://api.tomtom.com/lbs/services/reverseGeocode/3/json?key=$TOMTOM_KEY&point=52.499138,13.467264&type=National&language=de'
+
+
+curl -k 'https://api.tomtom.com/lbs/services/route/3/$LOCATION1:$LOCATION2/Walk/json?key=$TOMTOMKEY&pathpoints=18:abs&language=de'
+
+

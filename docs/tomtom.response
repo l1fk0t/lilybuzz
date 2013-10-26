@@ -1,0 +1,133 @@
+{
+   "route" : {
+      "@version" : "1.0.11-mascoma",
+      "instructions" : {
+         "instruction" : [
+            {
+               "travelTimeSeconds" : 0,
+               "roadName" : "Parkweg, Friedrichshain (Berlin)",
+               "iconPath" : "start.png",
+               "distanceMeters" : 0,
+               "roadNumber" : "",
+               "point" : {
+                  "longitude" : 13.46368,
+                  "latitude" : 52.49505
+               },
+               "@isOneWayBack" : true,
+               "bbox" : {
+                  "bottomLeft" : {
+                     "longitude" : 13.46368,
+                     "latitude" : 52.49505
+                  },
+                  "topRight" : {
+                     "longitude" : 13.46368,
+                     "latitude" : 52.49505
+                  }
+               },
+               "text" : "Losfahren in",
+               "@isDepartureAction" : true
+            },
+            {
+               "travelTimeSeconds" : 186,
+               "roadName" : "Alt-Stralau",
+               "iconPath" : "turnleft.png",
+               "distanceMeters" : 259,
+               "roadNumber" : "",
+               "point" : {
+                  "longitude" : 13.46612,
+                  "latitude" : 52.49686
+               },
+               "@isOneWayBack" : true,
+               "bbox" : {
+                  "bottomLeft" : {
+                     "longitude" : 13.46612,
+                     "latitude" : 52.49686
+                  },
+                  "topRight" : {
+                     "longitude" : 13.46612,
+                     "latitude" : 52.49686
+                  }
+               },
+               "text" : "Biegen Sie links ab auf"
+            },
+            {
+               "travelTimeSeconds" : 75,
+               "roadName" : "Markgrafendamm",
+               "iconPath" : "turnright.png",
+               "distanceMeters" : 363,
+               "roadNumber" : "",
+               "point" : {
+                  "longitude" : 13.4648,
+                  "latitude" : 52.4974
+               },
+               "bbox" : {
+                  "bottomLeft" : {
+                     "longitude" : 13.4648,
+                     "latitude" : 52.4974
+                  },
+                  "topRight" : {
+                     "longitude" : 13.4648,
+                     "latitude" : 52.4974
+                  }
+               },
+               "text" : "Biegen Sie rechts ab auf"
+            },
+            {
+               "travelTimeSeconds" : 18,
+               "@isDestinationAction" : true,
+               "roadName" : "Markgrafendamm, Friedrichshain (Berlin)",
+               "iconPath" : "finish.png",
+               "distanceMeters" : 387,
+               "roadNumber" : "",
+               "@isDestination" : true,
+               "point" : {
+                  "longitude" : 13.4649,
+                  "latitude" : 52.49761
+               },
+               "bbox" : {
+                  "bottomLeft" : {
+                     "longitude" : 13.4649,
+                     "latitude" : 52.49761
+                  },
+                  "topRight" : {
+                     "longitude" : 13.4649,
+                     "latitude" : 52.49761
+                  }
+               },
+               "text" : "Ankunft in"
+            }
+         ]
+      },
+      "summary" : {
+         "routeURI" : "@52.495146999999996,13.463423000000002:@52.49757029903289,13.465156645631398",
+         "totalTimeSeconds" : 279,
+         "totalDelaySeconds" : 0,
+         "trafficModelId" : "1382817617085",
+         "departureOverview" : {
+            "time" : "22:01",
+            "day" : "today",
+            "message" : "Jetzt abfahren in {0}"
+         },
+         "startTimeZone" : "Europe/Berlin",
+         "totalDistanceMeters" : 387,
+         "arrivalOverview" : {
+            "time" : "22:05",
+            "day" : "today",
+            "message" : "Heute ankommen in {0}"
+         },
+         "endTimeZone" : "Europe/Berlin",
+         "routeKey" : "w:1498741.392694448,6890154.3423176585:1498934.381243351,6890597.435557819:S:de:f:5:1201:f:1382817617085:9:f:b:t",
+         "iqType" : "S",
+         "bbox" : {
+            "bottomLeft" : {
+               "longitude" : 13.46342,
+               "latitude" : 52.49504
+            },
+            "topRight" : {
+               "longitude" : 13.46612,
+               "latitude" : 52.49761
+            }
+         }
+      }
+   }
+}

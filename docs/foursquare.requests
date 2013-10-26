@@ -10,7 +10,7 @@ historic site: 4deefb944765f83613cdba6e
 
 
 
-curl -k "https://api.foursquare.com/v2/venues/search?v=20131016&$FSQ_CLIENT_ID&client_secret=$FSQ_CLIENT_SECRET&ll=$LOCATION&&categoryId=4d4b7105d754a06376d81259&limit=25&intent=checkin&radius=1500"
+curl -k "https://api.foursquare.com/v2/venues/search?v=20131016&client_id=$FSQ_CLIENT_ID&client_secret=$FSQ_CLIENT_SECRET&ll=$LOCATION&&categoryId=4d4b7105d754a06376d81259&limit=25&intent=checkin&radius=1500"
 
 
 samplponse" : {

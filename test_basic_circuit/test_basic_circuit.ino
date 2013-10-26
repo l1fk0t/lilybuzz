@@ -6,19 +6,26 @@
 
 #define DEBUG 1
 
-#define sensorPin A5
-#define ledPin A2
+#define redPin 9
+#define greenPin 6
+#define bluePin 5
 #define buzzerPin 11
 
-#define fadeAmount 50
+#define bledPin A2 //right
+#define wled1Pin A3 //right
+#define wled2Pin A4 //left
+#define pledPin A5 //left
 
-int sensorValue = 0;
-int frequency = 0;
-int wait = 0;
 
 void setup(){
-  pinMode(ledPin, OUTPUT);
+  pinMode(bledPin, OUTPUT);
+  pinMode(wled1Pin, OUTPUT);
+  pinMode(wled2Pin, OUTPUT);
+  pinMode(pledPin, OUTPUT);
   pinMode(buzzerPin, OUTPUT);
+  pinMode(redPin, OUTPUT); 
+  pinMode(greenPin, OUTPUT); 
+  pinMode(bluePin, OUTPUT); 
   #ifdef DEBUG
     Serial.begin(9600);
   #endif
@@ -26,16 +33,18 @@ void setup(){
 
   
 void loop(){
-  scale();
-  sensorValue = analogRead(sensorPin);
-  frequency = map(sensorValue, 0, 1024, 1, 10);
-  wait = 100 * frequency;
+  testBuzzer();
+  
   #ifdef DEBUG
-    Serial.print(sensorValue);
-    Serial.print(" => ");
-    Serial.println(frequency);
   #endif
-  delay(wait);
+  
+  testLed(bledPin);
+  testLed(wled1Pin);
+  testLed(wled2Pin);
+  testLed(pledPin);
+  
+  testRGB();
+  
 }
   
   
@@ -52,10 +61,43 @@ void beep(int frequencyInHertz, long timeInMilliseconds)
   }
 }
 
-void scale()
+void testBuzzer()
 {
-  digitalWrite(ledPin, HIGH);
   beep(2093,500);	//C: play the note C (C7 from the chart linked to above) for 500ms
-  digitalWrite(ledPin,LOW);
+  delay(500);
 }
+
+void testLed(int led){
+  digitalWrite(led, HIGH);
+  delay(500);
+  digitalWrite(led, LOW);
+  delay(500);
+}
+
+void testRGB(){
+  // Basic colors:
+  color(255, 0, 0); // turn the RGB LED red
+  delay(1000);
+  color(0,255, 0); // turn the RGB LED green
+  delay(1000);
+  color(0, 0, 255); // turn the RGB LED blue
+  delay(1000);
+
+  // Example blended colors:
+  color(255,255,0); // turn the RGB LED yellow (more orange than yellow)
+  delay(1000);
+  color(255,255,255); // turn the RGB LED white (should be white but it is not)
+  delay(1000);
+  color(128,0,255); // turn the RGB LED purple
+  delay(1000);
+  color(0,0,0);	// turn the RGB LED off
+  delay(1000);
+}
+
+void color (unsigned char red, unsigned char green, unsigned char blue) // the color generating function
+{	 
+  analogWrite(redPin, 255-red);	 
+  analogWrite(bluePin, 255-blue);
+  analogWrite(greenPin, 255-green);
+}	 
 

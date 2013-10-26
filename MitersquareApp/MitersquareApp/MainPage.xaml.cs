@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Navigation;
+
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using MitersquareApp.Resources;
 
 namespace MitersquareApp
 {
+    using System.Threading;
+    using System.Windows.Threading;
+
+    using Microsoft.Phone.Reactive;
+
     public partial class MainPage : PhoneApplicationPage
     {
         // Constructor
@@ -20,6 +19,39 @@ namespace MitersquareApp
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var coords = new [] { "1", "2", "3", "4", "5" };
+
+            var gpsStream = this.GetGpsStream(coords);
+
+            var subscription = gpsStream.Subscribe(s => Deployment.Current.Dispatcher.BeginInvoke(() => test.Text = s));
+        }
+
+        private IObservable<string> GetGpsStream(string[] coords)
+        {
+            return Observable.CreateWithDisposable<string>(
+                observer =>
+                {
+                    var i = 0;
+                    var timer = new DispatcherTimer();
+                    timer.Interval = TimeSpan.FromSeconds(1);
+                    timer.Tick += (s, e) =>
+                    {
+                        if (i >= coords.Length)
+                        {
+                            timer.Stop();
+                            return;
+                        }
+                        observer.OnNext(coords[i]);
+                        i++;
+                    };
+                    timer.Start();
+
+                    return Disposable.Empty;
+                });
         }
 
         // Sample code for building a localized ApplicationBar

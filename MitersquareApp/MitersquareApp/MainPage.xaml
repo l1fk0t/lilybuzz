@@ -14,9 +14,12 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/Background.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -40,13 +43,16 @@
          -->
 
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28"/>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Image HorizontalAlignment="Left" Height="65" Margin="388,0,0,0" VerticalAlignment="Top" Width="58" Source="/Assets/profile.jpg" Stretch="UniformToFill"/>
+            <TextBlock HorizontalAlignment="Left" Margin="327,0,0,0" TextWrapping="Wrap" Text="Hello!" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="310,28,0,0" TextWrapping="Wrap" Text="Olcay" VerticalAlignment="Top" FontSize="28"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0,91,0,0" TextWrapping="Wrap" Text="Berlin" VerticalAlignment="Top" FontFamily="Portable User Interface" FontSize="75"/>
+            <Button Content="Explore" HorizontalAlignment="Left" Margin="301,112,-8,0" VerticalAlignment="Top" FontFamily="Portable User Interface" Width="163" Click="Button_Click"/>
+            <TextBlock x:Name="test" HorizontalAlignment="Left" Margin="139,311,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontFamily="Portable User Interface"/>
 
         </Grid>
 

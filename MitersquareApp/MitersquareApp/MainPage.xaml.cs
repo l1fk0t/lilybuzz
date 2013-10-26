@@ -27,7 +27,10 @@ namespace MitersquareApp
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
 
-            this.map.SetView(new GeoCoordinate(52.496760459223, 13.4545183181763), 14);
+            var coordinate = new GeoCoordinate(52.496760459223, 13.4545183181763);
+            var response = FoursquareClient.GetVenuesByLocation(coordinate);
+
+            this.map.SetView(coordinate, 14);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

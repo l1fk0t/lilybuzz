@@ -1,0 +1,77 @@
+available categeories
+
+curl -k "https://api.foursquare.com/v2/venues/categories?v=20131016&$FSQ_CLIENT_ID&client_secret=$FSQ_CLIENT_SECRET"
+
+nightlife spot: 4d4b7105d754a06376d81259
+clothing store, gaming cafe, museum : 4bf58dd8d48988d103951735
+historic site: 4deefb944765f83613cdba6e
+
+
+
+
+
+curl -k "https://api.foursquare.com/v2/venues/search?v=20131016&$FSQ_CLIENT_ID&client_secret=$FSQ_CLIENT_SECRET&ll=$LOCATION&&categoryId=4d4b7105d754a06376d81259&limit=25&intent=checkin&radius=1500"
+
+
+samplponse" : {
+      "neighborhoods" : [],
+      "venues" : [
+         {
+            "hereNow" : {
+               "count" : 1,
+               "groups" : [
+                  {
+                     "count" : 1,
+                     "name" : "Other people here",
+                     "type" : "others",
+                     "items" : []
+                  }
+               ]
+            },
+            "specials" : {
+               "count" : 0,
+               "items" : []
+            },
+            "location" : {
+               "country" : "Germany",
+               "distance" : 225,
+               "lat" : 52.4975702990329,
+               "state" : "Berlin",
+               "city" : "Berlin",
+               "cc" : "DE",
+               "address" : "Alt-Stralau 70",
+               "lng" : 13.4651566456314,
+               "postalCode" : "10245"
+            },
+            "referralId" : "v-1382813579",
+            "stats" : {
+               "usersCount" : 1366,
+               "tipCount" : 37,
+               "checkinsCount" : 1981
+           },
+            "name" : "Salon zur wilden Renate",
+            "categories" : [
+               {
+                  "icon" : {
+                     "suffix" : ".png",
+                     "prefix" : "https://ss1.4sqi.net/img/categories_v2/nightlife/nightclub_"
+                  },
+                  "primary" : true,
+                  "name" : "Nightclub",
+                  "id" : "4bf58dd8d48988d11f941735",
+                  "shortName" : "Nightclub",
+                  "pluralName" : "Nightclubs"
+               }
+            ],
+            "contact" : {
+               "phone" : "+493025041426",
+               "formattedPhone" : "+49 30 25041426"
+            },
+            "restricted" : true,
+            "url" : "http://www.renate.cc",
+            "id" : "4b4f7f91f964a520ff0827e3",
+            "verified" : true
+         },
+
+
+

@@ -38,6 +38,8 @@ namespace MitersquareApp
             coordinates = new[] 
             { 
                 coordinate, // current
+		new GeoCoordinate(52.49593, 13.45457),
+		new GeoCoordinate(52.49633, 13.45584),
                 new GeoCoordinate(52.496969, 13.45683),
                 new GeoCoordinate(52.496548, 13.458799),
                 new GeoCoordinate(52.496143, 13.460585),
@@ -60,14 +62,12 @@ namespace MitersquareApp
                 new GeoCoordinate(52.4975702990329, 13.4651566456314) // target
             };
 
-            this.PopulateListBox(coordinate);
-
             this.ShowLocationOnMap(coordinate);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //this.AppToDevice(6);
+            //this.AppToDevice(9);
 
             this.intro.Visibility = this.explore.Visibility = Visibility.Collapsed;
             this.map.Visibility = this.list.Visibility = Visibility.Visible;
@@ -80,11 +80,6 @@ namespace MitersquareApp
                 () =>
                 {
                     System.Windows.MessageBox.Show("Hot Spot Notification!");
-
-                    this.LoadSecondGeocoordinates();
-                    var secondObservable = this.GetGpsStream();
-                    secondObservable.Subscribe(
-                        c => Deployment.Current.Dispatcher.BeginInvoke(() => this.ShowLocationOnMap(c)));
                 });
         }
 
@@ -95,7 +90,7 @@ namespace MitersquareApp
                 {
                     var i = 0;
                     var timer = new DispatcherTimer();
-                    timer.Interval = TimeSpan.FromMilliseconds(1250);
+                    timer.Interval = TimeSpan.FromMilliseconds(1600);
                     timer.Tick += (s, e) =>
                     {
                         if (i >= this.coordinates.Length)
@@ -145,6 +140,14 @@ namespace MitersquareApp
 
         private void List_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (this.list.SelectedIndex == 0)
+            {
+                this.LoadSecondGeocoordinates();
+                var secondObservable = this.GetGpsStream();
+                secondObservable.Subscribe(c => Deployment.Current.Dispatcher.BeginInvoke(() => this.ShowLocationOnMap(c)));
+                return;
+            }
+
             var item = (VenueViewModel)this.list.SelectedItem;
 
             this.ShowLocationOnMap(item.Coordinate);
@@ -167,6 +170,7 @@ namespace MitersquareApp
 
         private async void PopulateListBox(GeoCoordinate coordinate)
         {
+            this.list.Items.Clear();
             var venues = await FoursquareClient.GetVenuesByLocation(coordinate);
 
             foreach (var venue in venues)

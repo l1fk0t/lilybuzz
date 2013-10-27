@@ -7,7 +7,6 @@ namespace MitersquareApp
 {
     using System.Device.Location;
     using System.Diagnostics;
-    using System.Threading;
     using System.Windows.Controls;
     using System.Windows.Media;
     using System.Windows.Shapes;
@@ -30,33 +29,34 @@ namespace MitersquareApp
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
-
-            this.PopulateData();
         }
 
-        private async void PopulateData()
+        private async void LoadFirstGeocoordinates()
         {
             var coordinate = new GeoCoordinate(52.496760459223, 13.4545183181763);
 
             coordinates = new[] 
             { 
                 coordinate, // current
-             
                 new GeoCoordinate(52.496969, 13.45683),
                 new GeoCoordinate(52.496548, 13.458799),
                 new GeoCoordinate(52.496143, 13.460585),
-                new GeoCoordinate(52.495735, 13.461696),//hint
+                new GeoCoordinate(52.495735, 13.461696) // hint
+            };
 
-                //new GeoCoordinate(52.495147, 13.463423), // hint
+            this.PopulateListBox(coordinate);
 
-                // secondLag
-                //new GeoCoordinate(52.496917, 13.456728),
-		
-                new GeoCoordinate(52.49590, 13.46323),
+            this.ShowLocationOnMap(coordinate);
+        }
+
+        private async void LoadSecondGeocoordinates()
+        {
+            var coordinate = new GeoCoordinate(52.49590, 13.46323);
+            coordinates = new[] 
+            { 
+                coordinate, // current
                 new GeoCoordinate(52.496303, 13.463724),
                 new GeoCoordinate(52.497394, 13.464829),
-
-                
                 new GeoCoordinate(52.4975702990329, 13.4651566456314) // target
             };
 
@@ -67,15 +67,25 @@ namespace MitersquareApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.AppToDevice(6);
-            
+            //this.AppToDevice(6);
+
             this.intro.Visibility = this.explore.Visibility = Visibility.Collapsed;
             this.map.Visibility = this.list.Visibility = Visibility.Visible;
+            
+            this.LoadFirstGeocoordinates();
+            var firstObservable = this.GetGpsStream();
+            firstObservable.Subscribe(
+                c => Deployment.Current.Dispatcher.BeginInvoke(() => this.ShowLocationOnMap(c)),
+                delegate { },
+                () =>
+                {
+                    System.Windows.MessageBox.Show("Hot Spot Notification!");
 
-            var observable = this.GetGpsStream();
-            var subscription = observable.Subscribe(
-                coordinate => Deployment.Current.Dispatcher.BeginInvoke(
-                    () => this.ShowLocationOnMap(coordinate)));
+                    this.LoadSecondGeocoordinates();
+                    var secondObservable = this.GetGpsStream();
+                    secondObservable.Subscribe(
+                        c => Deployment.Current.Dispatcher.BeginInvoke(() => this.ShowLocationOnMap(c)));
+                });
         }
 
         private IObservable<GeoCoordinate> GetGpsStream()
@@ -88,12 +98,13 @@ namespace MitersquareApp
                     timer.Interval = TimeSpan.FromMilliseconds(1250);
                     timer.Tick += (s, e) =>
                     {
-                        if (i >= coordinates.Length)
+                        if (i >= this.coordinates.Length)
                         {
                             timer.Stop();
+                            observer.OnCompleted();
                             return;
                         }
-                        observer.OnNext(coordinates[i]);
+                        observer.OnNext(this.coordinates[i]);
                         i++;
                     };
                     timer.Start();

@@ -60,7 +60,7 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Image HorizontalAlignment="Left" Height="65" Margin="388,0,0,0" VerticalAlignment="Top" Width="58" Source="/Assets/profile.jpg" Stretch="UniformToFill"/>
             <TextBlock HorizontalAlignment="Left" Margin="327,0,0,0" TextWrapping="Wrap" Text="Hello!" VerticalAlignment="Top"/>
-            <TextBlock HorizontalAlignment="Left" Margin="310,28,0,0" TextWrapping="Wrap" Text="Olcay" VerticalAlignment="Top" FontSize="28"/>
+            <TextBlock HorizontalAlignment="Left" Margin="284,28,0,0" TextWrapping="Wrap" Text="Simona" VerticalAlignment="Top" FontSize="28" FontFamily="Portable User Interface"/>
             <TextBlock HorizontalAlignment="Left" Margin="0,-4,0,0" TextWrapping="Wrap" Text="Berlin" VerticalAlignment="Top" FontFamily="Portable User Interface" FontSize="75"/>
             <maps:Map x:Name="map" HorizontalAlignment="Left" Margin="-10,121,-13,0" VerticalAlignment="Top" FontFamily="Portable User Interface" Width="479" Height="296" Visibility="Collapsed"/>
             <Button x:Name="explore" Content="Explore" HorizontalAlignment="Left" Margin="148,559,0,0" VerticalAlignment="Top" FontFamily="Portable User Interface" Width="163" Click="Button_Click" Visibility="Visible"/>

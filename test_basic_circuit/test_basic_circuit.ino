@@ -35,16 +35,24 @@ void setup(){
 void loop(){
   testBuzzer();
   
-  #ifdef DEBUG
-  #endif
-  
   testLed(bledPin);
   testLed(wled1Pin);
   testLed(wled2Pin);
   testLed(pledPin);
   
   testRGB();
+
+ // off();
   
+}
+
+void off(){
+  digitalWrite(bledPin, LOW);
+  digitalWrite(wled1Pin, LOW);
+  digitalWrite(wled2Pin, LOW);
+  digitalWrite(pledPin, LOW);
+  digitalWrite(buzzerPin, LOW);
+  color(0,0,0);
 }
   
   

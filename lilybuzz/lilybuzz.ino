@@ -5,14 +5,14 @@
 */
 #include <SoftwareSerial.h>
 
-#define DEBUG 1
+//#define DEBUG 0
 
 #define bluetoothTx 2
 #define bluetoothRx 3
 
 #define redPin 9
-#define greenPin 6
-#define bluePin 5
+#define greenPin 5
+#define bluePin 6
 #define buzzerPin 11
 
 #define bledPin A2 //right
@@ -25,6 +25,7 @@ SoftwareSerial bluetooth(bluetoothTx,bluetoothRx);
 
 int rgb_value = 0;
 int intValue = 0;
+int loop_count = 0;
 
 void setup(){
   pinMode(bledPin, OUTPUT);
@@ -61,6 +62,12 @@ void loop(){
   #endif
   }
   
+  #ifdef DEBUG
+    intValue = (loop_count % 10) + 1;
+    Serial.print("Received integer value: ");
+    Serial.println(intValue);
+  #endif
+  
   switch (intValue){
     case 1: // connection ON
       rgb_green();
@@ -91,7 +98,9 @@ void loop(){
        digitalWrite(pledPin, LOW);
        break;
      case 8: // wrong path
-       flicker_blue_pink();
+       for (int i=0; i<10; i++){
+         flicker_blue_pink();
+       }
        break;
      case 9: //arrived
        all_leds_flash();
@@ -101,6 +110,11 @@ void loop(){
        nav_off();
        break;
   }
+  
+  #ifdef DEBUG
+    ++loop_count;
+    delay(11000);
+  #endif
   
 }
 
@@ -114,8 +128,8 @@ void nav_off(){
 
 void all_leds_flash(){
   for (int x=0; x<20; x++){
-    digitalWrite(wled1Pin, LOW);
-    digitalWrite(wled2Pin, LOW);
+    digitalWrite(wled1Pin, HIGH);
+    digitalWrite(wled2Pin, HIGH);
     digitalWrite(bledPin, HIGH);
     digitalWrite(pledPin, HIGH);
     delay(500);
@@ -130,13 +144,11 @@ void flicker_blue_pink(){
   digitalWrite(wled1Pin, LOW);
   digitalWrite(wled2Pin, LOW);
   
-  do {
-    digitalWrite(bledPin, HIGH);
-    digitalWrite(pledPin, HIGH);
-    delay(100);
-    digitalWrite(bledPin, LOW);
-    digitalWrite(pledPin, LOW);
-  } while (intValue == 8);
+  digitalWrite(bledPin, HIGH);
+  digitalWrite(pledPin, HIGH);
+  delay(300);
+  digitalWrite(bledPin, LOW);
+  digitalWrite(pledPin, LOW);
 }
 
 void off(){

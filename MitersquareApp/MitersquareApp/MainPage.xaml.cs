@@ -5,17 +5,22 @@ using Microsoft.Phone.Controls;
 
 namespace MitersquareApp
 {
+    using System.Collections.Generic;
     using System.Device.Location;
     using System.Diagnostics;
     using System.Threading;
+    using System.Windows.Controls;
     using System.Windows.Threading;
 
+    using Windows.Devices.Geolocation;
     using Windows.Networking.Proximity;
     using Windows.Networking.Sockets;
     using Windows.Storage.Streams;
 
     using Microsoft.Phone.Maps.Controls;
+    using Microsoft.Phone.Maps.Services;
     using Microsoft.Phone.Reactive;
+    using Microsoft.Phone.Tasks;
 
     public partial class MainPage : PhoneApplicationPage
     {
@@ -27,14 +32,30 @@ namespace MitersquareApp
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
 
-            var coordinate = new GeoCoordinate(52.496760459223, 13.4545183181763);
-            var response = FoursquareClient.GetVenuesByLocation(coordinate);
+            this.PopulateData();
+        }
 
-            this.map.SetView(coordinate, 14);
+        private async void PopulateData()
+        {
+            var coordinate = new GeoCoordinate(52.496760459223, 13.4545183181763);
+
+            var venues = await FoursquareClient.GetVenuesByLocation(coordinate);
+
+            foreach (var venue in venues)
+            {
+                this.list.Items.Add(venue);
+            }
+
+            this.map.SetView(coordinate, 12);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            AppToDevice();
+
+            this.intro.Visibility = this.explore.Visibility = Visibility.Collapsed;
+            this.map.Visibility = this.list.Visibility = Visibility.Visible;
+
             var coords = new [] { "1", "2", "3", "4", "5" };
 
             var gpsStream = this.GetGpsStream(coords);
@@ -90,9 +111,9 @@ namespace MitersquareApp
 
                 var writer = new DataWriter(socket.OutputStream);
 
-                writer.WriteInt32(7);
+                writer.WriteByte(7);
                 writer.StoreAsync();
-                writer.DetachStream();
+                //writer.DetachStream();
             }
         }
 
@@ -111,5 +132,22 @@ namespace MitersquareApp
         //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
         //    ApplicationBar.MenuItems.Add(appBarMenuItem);
         //}
+
+        private void List_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var item = (VenueViewModel)this.list.SelectedItem;
+            var query = new GeocodeQuery();
+
+            var coordinate = new GeoCoordinate(52.496760459223, 13.4545183181763);
+            query.GeoCoordinate = coordinate;
+            query.SearchTerm = item.Coordinate.ToString();
+
+            IList<MapLocation> locations = null;
+            var mre = new ManualResetEventSlim(false);
+            query.QueryCompleted += (o, args) => { locations = args.Result; mre.Set(); };
+            query.QueryAsync();
+            mre.Wait();
+
+        }
     }
 }

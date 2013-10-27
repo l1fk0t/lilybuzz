@@ -1,8 +1,11 @@
 ﻿namespace MitersquareApp
 {
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.Device.Location;
     using System.IO;
+    using System.Linq;
     using System.Net;
     using System.Net.Http;
     using System.Security.Cryptography;
@@ -17,9 +20,9 @@
 
         private const string ClientSecret = "0W10IUXDTVFKAQC4P4ORI1ODJ45JOMXYHEBZE25DHRL0JAU0";
 
-        private const string Url = "https://api.foursquare.com/v2/venues/search?v=20131016&client_id={0}&client_secret={1}&ll={2}&categoryId=4d4b7105d754a06376d81259&limit=25&intent=checkin&radius=1500";
+        private const string Url = "https://api.foursquare.com/v2/venues/search?v=20131016&client_id={0}&client_secret={1}&ll={2}&categoryId=4d4b7105d754a06376d81259&limit=8&intent=checkin&radius=1500";
 
-        public async static Task<FoursquareResponse> GetVenuesByLocation(GeoCoordinate coordinate)
+        public async static Task<IEnumerable<VenueViewModel>> GetVenuesByLocation(GeoCoordinate coordinate)
         {
             string latLong = coordinate.ToString();
             var url = string.Format(Url, ClientId, ClientSecret, latLong);
@@ -29,8 +32,25 @@
             
             var data = JsonConvert.DeserializeObject<FoursquareResponse>(json);
 
-            return data;
+            return data.response.venues.Select(v =>
+                {
+                    var c = v.categories.First();
+                    return new VenueViewModel()
+                           {
+                               Name = v.name, 
+                               IconUrl = c.icon.prefix + "64" + c.icon.suffix,
+                               Coordinate = new GeoCoordinate(v.location.lat, v.location.lng)
+                           };
+                });
         }
+    }
+
+    public class VenueViewModel
+    {
+        public string Name { get; set; }
+
+        public string IconUrl { get; set; }
+        public GeoCoordinate Coordinate { get; set; }
     }
 
     public class FoursquareResponse

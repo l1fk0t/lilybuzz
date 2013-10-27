@@ -62,12 +62,24 @@
             <TextBlock HorizontalAlignment="Left" Margin="327,0,0,0" TextWrapping="Wrap" Text="Hello!" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="310,28,0,0" TextWrapping="Wrap" Text="Olcay" VerticalAlignment="Top" FontSize="28"/>
             <TextBlock HorizontalAlignment="Left" Margin="0,-4,0,0" TextWrapping="Wrap" Text="Berlin" VerticalAlignment="Top" FontFamily="Portable User Interface" FontSize="75"/>
-            <maps:Map x:Name="map" HorizontalAlignment="Left" Margin="-10,121,-13,0" VerticalAlignment="Top" FontFamily="Portable User Interface" Width="479" Height="202" Visibility="Collapsed"/>
-            <Button Content="Explore" HorizontalAlignment="Left" Margin="148,559,0,0" VerticalAlignment="Top" FontFamily="Portable User Interface" Width="163" Click="Button_Click"/>
-            <Image HorizontalAlignment="Left" Height="261" Margin="55,235,0,0" VerticalAlignment="Top" Width="345" Source="/Assets/intro.png" Stretch="UniformToFill"/>
-
+            <maps:Map x:Name="map" HorizontalAlignment="Left" Margin="-10,121,-13,0" VerticalAlignment="Top" FontFamily="Portable User Interface" Width="479" Height="296" Visibility="Collapsed"/>
+            <Button x:Name="explore" Content="Explore" HorizontalAlignment="Left" Margin="148,559,0,0" VerticalAlignment="Top" FontFamily="Portable User Interface" Width="163" Click="Button_Click" Visibility="Visible"/>
+            <Image x:Name="intro" HorizontalAlignment="Left" Height="261" Margin="55,235,0,0" VerticalAlignment="Top" Width="345" Source="/Assets/intro.png" Stretch="UniformToFill" Visibility="Visible"/>
+            <ListBox x:Name="list" SelectionChanged="List_OnSelectionChanged" Background="Black" HorizontalAlignment="Left" Height="331" Margin="-10,417,-13,0" VerticalAlignment="Top" Width="479" FontFamily="Portable User Interface" Visibility="Collapsed">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Margin="10,0" Source="{Binding IconUrl}" Stretch="UniformToFill" />
+                            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,15" Text="{Binding Name}" FontFamily="Portable User Interface" FontSize="27" />
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </Grid>
-
     </Grid>
 
 </phone:PhoneApplicationPage>

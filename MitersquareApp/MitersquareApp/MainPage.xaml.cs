@@ -45,12 +45,14 @@ namespace MitersquareApp
                 new GeoCoordinate(52.496969, 13.45683),
                 new GeoCoordinate(52.496548, 13.458799),
                 new GeoCoordinate(52.496143, 13.460585),
-                new GeoCoordinate(52.495735, 13.461696),
+                new GeoCoordinate(52.495735, 13.461696),//hint
 
-                new GeoCoordinate(52.495147, 13.463423), // hint
+                //new GeoCoordinate(52.495147, 13.463423), // hint
 
                 // secondLag
-                new GeoCoordinate(52.496917, 13.456728),
+                //new GeoCoordinate(52.496917, 13.456728),
+		
+                new GeoCoordinate(52.49590, 13.46323),
                 new GeoCoordinate(52.496303, 13.463724),
                 new GeoCoordinate(52.497394, 13.464829),
 

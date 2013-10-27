@@ -9,7 +9,6 @@
 #define wled2Pin A4 //left
 #define pledPin A5 //left
 
-int rgb_value = 0;
 int intValue = 0;
 int loop_count = 0;
 
@@ -31,7 +30,7 @@ void setup(){
 }
 
 
-void loop(){
+void loop() {
 
   if (Serial.available()){ //if bluetooth sent any characters
     // send ay character the bluetooth prints to the serial monitor
@@ -44,17 +43,14 @@ void loop(){
     switch (intValue){
     case  1: // connection ON
     case 49:
-      rgb_green();
       break;
     case  2:  // notification
     case 50:
-      //buzz_rgb_blue();
       Serial.println("beep");
       beep(500);
       break;
     case  3: // system error
     case 51:
-      rgb_red();
       break;
     case  4: // all off
     case 52:
@@ -99,9 +95,6 @@ void loop(){
       break;
     }
   }
-
-
-
 }
 
 void nav_off(){
@@ -130,7 +123,6 @@ void all_leds_flash(){
 
 void off(){
   nav_off();
-  rgb_off();
 }
 
 
@@ -141,56 +133,8 @@ void beep(long timeInMilliseconds)
 
   for (x=0; x<loops; x++){
     digitalWrite(buzzerPin, HIGH);
-    //rgb_blue();
     delay(timeInMilliseconds);
     digitalWrite(buzzerPin, LOW);
-    //rgb_off();
   }
 }
-
-void buzz_rgb_blue()
-{
-  int bkp_rgb = rgb_value;
-  beep(500);	//C: play the note C (C7 from the chart linked to above)
-
-  switch (bkp_rgb){
-  case 0:
-    rgb_red();
-    break;
-  case 1:
-    rgb_green();
-    break;
-  case 2:
-    rgb_blue();
-    break;
-  }
-}
-
-
-void rgb_red(){
-  rgb_value = 0;
-  color(255, 0, 0);
-}
-
-void rgb_green(){
-  rgb_value = 1;
-  color(0,255,0);
-}
-
-void rgb_blue(){
-  rgb_value = 2;
-  color(0,0,255);
-}
-
-void rgb_off(){
-  color(0,0,0);
-}
-
-void color (unsigned char red, unsigned char green, unsigned char blue) // the color generating function
-{	 
-  //analogWrite(redPin, 255-red);	 
-  //analogWrite(bluePin, 255-blue);
-  //analogWrite(greenPin, 255-green);
-}	 
-
 

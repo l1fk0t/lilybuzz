@@ -97,7 +97,7 @@ namespace MitersquareApp
                 {
                     var i = 0;
                     var timer = new DispatcherTimer();
-                    timer.Interval = TimeSpan.FromMilliseconds(1250);
+                    timer.Interval = TimeSpan.FromMilliseconds(1600);
                     timer.Tick += (s, e) =>
                     {
                         if (i >= this.coordinates.Length)

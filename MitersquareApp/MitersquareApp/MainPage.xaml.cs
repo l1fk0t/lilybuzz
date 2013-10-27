@@ -58,19 +58,14 @@ namespace MitersquareApp
                 new GeoCoordinate(52.4975702990329, 13.4651566456314) // target
             };
 
-            var venues = await FoursquareClient.GetVenuesByLocation(coordinate);
-
-            foreach (var venue in venues)
-            {
-                this.list.Items.Add(venue);
-            }
+            this.PopulateListBox(coordinate);
 
             this.ShowLocationOnMap(coordinate);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //this.AppToDevice(7);
+            this.AppToDevice(6);
             
             this.intro.Visibility = this.explore.Visibility = Visibility.Collapsed;
             this.map.Visibility = this.list.Visibility = Visibility.Visible;
@@ -88,7 +83,7 @@ namespace MitersquareApp
                 {
                     var i = 0;
                     var timer = new DispatcherTimer();
-                    timer.Interval = TimeSpan.FromSeconds(1);
+                    timer.Interval = TimeSpan.FromMilliseconds(1250);
                     timer.Tick += (s, e) =>
                     {
                         if (i >= coordinates.Length)
@@ -130,13 +125,8 @@ namespace MitersquareApp
 
                 var writer = new DataWriter(socket.OutputStream);
 
-                for (int i = 0; i < 10; i++)
-                {
-                    writer.WriteByte(command);
-                    writer.StoreAsync();
-
-                    Thread.Sleep(1000);
-                }
+                writer.WriteByte(command);
+                await writer.StoreAsync();
             }
         }
 
@@ -160,6 +150,16 @@ namespace MitersquareApp
             this.map.Layers.Clear();
             this.map.Layers.Add(layer);
             this.map.SetView(coordinate, 15);
+        }
+
+        private async void PopulateListBox(GeoCoordinate coordinate)
+        {
+            var venues = await FoursquareClient.GetVenuesByLocation(coordinate);
+
+            foreach (var venue in venues)
+            {
+                this.list.Items.Add(venue);
+            }
         }
     }
 }

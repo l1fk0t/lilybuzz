@@ -7,6 +7,7 @@ namespace MitersquareApp
 {
     using System.Device.Location;
     using System.Diagnostics;
+    using System.Threading;
     using System.Windows.Controls;
     using System.Windows.Media;
     using System.Windows.Shapes;
@@ -46,9 +47,7 @@ namespace MitersquareApp
                 new GeoCoordinate(52.496143, 13.460585),
                 new GeoCoordinate(52.495735, 13.461696),
 
-                new GeoCoordinate(52.495147, 13.463423),
-                new GeoCoordinate(52.492773, 13.462474), // treptow
-                new GeoCoordinate(52.502168, 13.470027), // ostkreuz
+                new GeoCoordinate(52.495147, 13.463423), // hint
 
                 // secondLag
                 new GeoCoordinate(52.495954, 13.464947),
@@ -70,14 +69,15 @@ namespace MitersquareApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.AppToDevice(7);
-
+            //this.AppToDevice(7);
+            
             this.intro.Visibility = this.explore.Visibility = Visibility.Collapsed;
             this.map.Visibility = this.list.Visibility = Visibility.Visible;
 
             var observable = this.GetGpsStream();
-
-            //var subscription = gpsStream.Subscribe(s => Deployment.Current.Dispatcher.BeginInvoke(() => test.Text = s));
+            var subscription = observable.Subscribe(
+                coordinate => Deployment.Current.Dispatcher.BeginInvoke(
+                    () => this.ShowLocationOnMap(coordinate)));
         }
 
         private IObservable<GeoCoordinate> GetGpsStream()
@@ -129,8 +129,13 @@ namespace MitersquareApp
 
                 var writer = new DataWriter(socket.OutputStream);
 
-                writer.WriteByte(command);
-                writer.StoreAsync();
+                for (int i = 0; i < 10; i++)
+                {
+                    writer.WriteByte(command);
+                    writer.StoreAsync();
+
+                    Thread.Sleep(1000);
+                }
             }
         }
 

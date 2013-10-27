@@ -9,7 +9,6 @@
 #define wled2Pin A4 //left
 #define pledPin A5 //left
 
-int rgb_value = 0;
 int intValue = 0;
 int loop_count = 0;
 
@@ -31,7 +30,7 @@ void setup(){
 }
 
 
-void loop(){
+void loop() {
 
   if (Serial.available()){ //if bluetooth sent any characters
     // send ay character the bluetooth prints to the serial monitor
@@ -42,51 +41,60 @@ void loop(){
 #endif
 
     switch (intValue){
-    case 1: // connection ON
-      rgb_green();
+    case  1: // connection ON
+    case 49:
       break;
-    case 2:  // notification
-      buzz_rgb_blue();
+    case  2:  // notification
+    case 50:
+      Serial.println("beep");
+      beep(500);
       break;
-    case 3: // system error
-      rgb_red();
+    case  3: // system error
+    case 51:
       break;
-    case 4: // all off
+    case  4: // all off
+    case 52:
       off();
       break;
     case 5:  // go straight
+    case 53:
+      digitalWrite(bledPin, LOW);
       digitalWrite(wled1Pin, HIGH);
       digitalWrite(wled2Pin, HIGH);
+      digitalWrite(pledPin, LOW);
       break;
     case 6: // turn left
+    case 54:
       digitalWrite(bledPin, LOW);
       digitalWrite(wled1Pin, LOW);
       digitalWrite(wled2Pin, HIGH);
       digitalWrite(pledPin, HIGH);
       break;
     case 7: // turn right
+    case 55:
       digitalWrite(bledPin, HIGH);
       digitalWrite(wled1Pin, HIGH);
       digitalWrite(wled2Pin, LOW);
       digitalWrite(pledPin, LOW);
       break;
     case 8: // wrong path
-      for (int i=0; i<10; i++){
-        flicker_blue_pink();
-      }
+    case 56:
+      digitalWrite(wled1Pin, LOW);
+      digitalWrite(wled2Pin, LOW);
+      digitalWrite(bledPin, HIGH);
+      digitalWrite(pledPin, HIGH);
       break;
     case 9: //arrived
+    case 57:
       all_leds_flash();
       off();
       break;
     case 10: // navigation off
+    case 58:
       nav_off();
       break;
     }
   }
-
-
-
 }
 
 void nav_off(){
@@ -98,7 +106,7 @@ void nav_off(){
 }
 
 void all_leds_flash(){
-  for (int x=0; x<20; x++){
+  for (int x=0; x<5; x++){
     digitalWrite(wled1Pin, HIGH);
     digitalWrite(wled2Pin, HIGH);
     digitalWrite(bledPin, HIGH);
@@ -108,84 +116,25 @@ void all_leds_flash(){
     digitalWrite(wled2Pin, LOW);
     digitalWrite(bledPin, LOW);
     digitalWrite(pledPin, LOW);
+    delay(500);
   }
 }
 
-void flicker_blue_pink(){
-  digitalWrite(wled1Pin, LOW);
-  digitalWrite(wled2Pin, LOW);
-
-  digitalWrite(bledPin, HIGH);
-  digitalWrite(pledPin, HIGH);
-  delay(300);
-  digitalWrite(bledPin, LOW);
-  digitalWrite(pledPin, LOW);
-}
 
 void off(){
   nav_off();
-  rgb_off();
 }
 
 
-void beep(int frequencyInHertz, long timeInMilliseconds)
+void beep(long timeInMilliseconds)
 {
   int x;
-  long delayAmount = (long)(1000000/frequencyInHertz);
   int loops = 3;
 
   for (x=0; x<loops; x++){
     digitalWrite(buzzerPin, HIGH);
-    rgb_blue();
     delay(timeInMilliseconds);
     digitalWrite(buzzerPin, LOW);
-    rgb_off();
   }
 }
-
-void buzz_rgb_blue()
-{
-  int bkp_rgb = rgb_value;
-  beep(2093,500);	//C: play the note C (C7 from the chart linked to above)
-
-  switch (bkp_rgb){
-  case 0:
-    rgb_red();
-    break;
-  case 1:
-    rgb_green();
-    break;
-  case 2:
-    rgb_blue();
-    break;
-  }
-}
-
-
-void rgb_red(){
-  rgb_value = 0;
-  color(255, 0, 0);
-}
-
-void rgb_green(){
-  rgb_value = 1;
-  color(0,255,0);
-}
-
-void rgb_blue(){
-  rgb_value = 2;
-  color(0,0,255);
-}
-
-void rgb_off(){
-  color(0,0,0);
-}
-
-void color (unsigned char red, unsigned char green, unsigned char blue) // the color generating function
-{	 
-  //analogWrite(redPin, 255-red);	 
-  //analogWrite(bluePin, 255-blue);
-  //analogWrite(greenPin, 255-green);
-}	 
-
 

@@ -38,6 +38,8 @@ namespace MitersquareApp
             coordinates = new[] 
             { 
                 coordinate, // current
+		new GeoCoordinate(52.49593, 13.45457),
+		new GeoCoordinate(52.49633, 13.45584),
                 new GeoCoordinate(52.496969, 13.45683),
                 new GeoCoordinate(52.496548, 13.458799),
                 new GeoCoordinate(52.496143, 13.460585),
@@ -88,7 +90,7 @@ namespace MitersquareApp
                 {
                     var i = 0;
                     var timer = new DispatcherTimer();
-                    timer.Interval = TimeSpan.FromMilliseconds(1250);
+                    timer.Interval = TimeSpan.FromMilliseconds(1600);
                     timer.Tick += (s, e) =>
                     {
                         if (i >= this.coordinates.Length)

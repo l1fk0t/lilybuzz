@@ -5,26 +5,25 @@ using Microsoft.Phone.Controls;
 
 namespace MitersquareApp
 {
-    using System.Collections.Generic;
     using System.Device.Location;
     using System.Diagnostics;
     using System.Threading;
     using System.Windows.Controls;
+    using System.Windows.Media;
+    using System.Windows.Shapes;
     using System.Windows.Threading;
 
-    using Windows.Devices.Geolocation;
     using Windows.Networking.Proximity;
     using Windows.Networking.Sockets;
     using Windows.Storage.Streams;
 
     using Microsoft.Phone.Maps.Controls;
-    using Microsoft.Phone.Maps.Services;
     using Microsoft.Phone.Reactive;
-    using Microsoft.Phone.Tasks;
 
     public partial class MainPage : PhoneApplicationPage
     {
-        // Constructor
+        private GeoCoordinate[] coordinates;
+
         public MainPage()
         {
             InitializeComponent();
@@ -39,6 +38,28 @@ namespace MitersquareApp
         {
             var coordinate = new GeoCoordinate(52.496760459223, 13.4545183181763);
 
+            coordinates = new[] 
+            { 
+                coordinate, // current
+             
+                new GeoCoordinate(52.496969, 13.45683),
+                new GeoCoordinate(52.496548, 13.458799),
+                new GeoCoordinate(52.496143, 13.460585),
+                new GeoCoordinate(52.495735, 13.461696),//hint
+
+                //new GeoCoordinate(52.495147, 13.463423), // hint
+
+                // secondLag
+                //new GeoCoordinate(52.496917, 13.456728),
+		
+                new GeoCoordinate(52.49590, 13.46323),
+                new GeoCoordinate(52.496303, 13.463724),
+                new GeoCoordinate(52.497394, 13.464829),
+
+                
+                new GeoCoordinate(52.4975702990329, 13.4651566456314) // target
+            };
+
             var venues = await FoursquareClient.GetVenuesByLocation(coordinate);
 
             foreach (var venue in venues)
@@ -46,26 +67,25 @@ namespace MitersquareApp
                 this.list.Items.Add(venue);
             }
 
-            this.map.SetView(coordinate, 12);
+            this.ShowLocationOnMap(coordinate);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AppToDevice();
-
+            //this.AppToDevice(7);
+            
             this.intro.Visibility = this.explore.Visibility = Visibility.Collapsed;
             this.map.Visibility = this.list.Visibility = Visibility.Visible;
 
-            var coords = new [] { "1", "2", "3", "4", "5" };
-
-            var gpsStream = this.GetGpsStream(coords);
-
-            //var subscription = gpsStream.Subscribe(s => Deployment.Current.Dispatcher.BeginInvoke(() => test.Text = s));
+            var observable = this.GetGpsStream();
+            var subscription = observable.Subscribe(
+                coordinate => Deployment.Current.Dispatcher.BeginInvoke(
+                    () => this.ShowLocationOnMap(coordinate)));
         }
 
-        private IObservable<string> GetGpsStream(string[] coords)
+        private IObservable<GeoCoordinate> GetGpsStream()
         {
-            return Observable.CreateWithDisposable<string>(
+            return Observable.CreateWithDisposable<GeoCoordinate>(
                 observer =>
                 {
                     var i = 0;
@@ -73,12 +93,12 @@ namespace MitersquareApp
                     timer.Interval = TimeSpan.FromSeconds(1);
                     timer.Tick += (s, e) =>
                     {
-                        if (i >= coords.Length)
+                        if (i >= coordinates.Length)
                         {
                             timer.Stop();
                             return;
                         }
-                        observer.OnNext(coords[i]);
+                        observer.OnNext(coordinates[i]);
                         i++;
                     };
                     timer.Start();
@@ -87,7 +107,7 @@ namespace MitersquareApp
                 });
         }
 
-        private async void AppToDevice()
+        private async void AppToDevice(byte command)
         {
             // Configure PeerFinder to search for all paired devices.
             PeerFinder.AlternateIdentities["Bluetooth:Paired"] = "";
@@ -103,6 +123,7 @@ namespace MitersquareApp
                 PeerInformation selectedDevice = pairedDevices[0];
                 // Attempt a connection
                 StreamSocket socket = new StreamSocket();
+
                 // Make sure ID_CAP_NETWORKING is enabled in your WMAppManifest.xml, or the next 
                 // line will throw an Access Denied exception.
                 // In this example, the second parameter of the call to ConnectAsync() is the RFCOMM port number, and can range 
@@ -111,43 +132,36 @@ namespace MitersquareApp
 
                 var writer = new DataWriter(socket.OutputStream);
 
-                writer.WriteByte(7);
-                writer.StoreAsync();
-                //writer.DetachStream();
+                for (int i = 0; i < 10; i++)
+                {
+                    writer.WriteByte(command);
+                    writer.StoreAsync();
+
+                    Thread.Sleep(1000);
+                }
             }
         }
-
-        // Sample code for building a localized ApplicationBar
-        //private void BuildLocalizedApplicationBar()
-        //{
-        //    // Set the page's ApplicationBar to a new instance of ApplicationBar.
-        //    ApplicationBar = new ApplicationBar();
-
-        //    // Create a new button and set the text value to the localized string from AppResources.
-        //    ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.add.rest.png", UriKind.Relative));
-        //    appBarButton.Text = AppResources.AppBarButtonText;
-        //    ApplicationBar.Buttons.Add(appBarButton);
-
-        //    // Create a new menu item with the localized string from AppResources.
-        //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
-        //    ApplicationBar.MenuItems.Add(appBarMenuItem);
-        //}
 
         private void List_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var item = (VenueViewModel)this.list.SelectedItem;
-            var query = new GeocodeQuery();
 
-            var coordinate = new GeoCoordinate(52.496760459223, 13.4545183181763);
-            query.GeoCoordinate = coordinate;
-            query.SearchTerm = item.Coordinate.ToString();
+            this.ShowLocationOnMap(item.Coordinate);
+        }
 
-            IList<MapLocation> locations = null;
-            var mre = new ManualResetEventSlim(false);
-            query.QueryCompleted += (o, args) => { locations = args.Result; mre.Set(); };
-            query.QueryAsync();
-            mre.Wait();
+        private void ShowLocationOnMap(GeoCoordinate coordinate)
+        {
+            var overlay = new MapOverlay
+            {
+                GeoCoordinate = coordinate,
+                Content = new Ellipse() { Fill = new SolidColorBrush(Colors.Blue), Width = 30, Height = 30 }
+            };
+            var layer = new MapLayer();
+            layer.Add(overlay);
 
+            this.map.Layers.Clear();
+            this.map.Layers.Add(layer);
+            this.map.SetView(coordinate, 15);
         }
     }
 }
